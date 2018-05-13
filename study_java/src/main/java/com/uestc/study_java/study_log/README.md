@@ -2,6 +2,7 @@
 
 1将需要依赖一起打包
 1.1第一个编写assembly.xml打包文件
+og4j.appender.R.File=example.log为生成的日志文件
 1.2在pom.xml配置
 <properties>
 <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
