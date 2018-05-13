@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class Test {
@@ -13,16 +14,17 @@ public class Test {
 	}
 	public void loadProperties(){
 		//方法一，添加文件
-    	FileInputStream fileInputStream = null;
-        try {
-			fileInputStream = new FileInputStream("./conf/feeds-ranker-conf.properties");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//    	FileInputStream fileInputStream = null;
+//        try {
+//			fileInputStream = new FileInputStream("./conf/feeds-ranker-conf.properties");
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
         //方法二添加，加载文件
-    	//InputStream fileInputStream = null;
-    	//fileInputStream = this.getClass().getClassLoader().getResourceAsStream("./conf/feeds-ranker-conf.properties");
+    	InputStream fileInputStream = null;
+    	fileInputStream = this.getClass().getClassLoader().getResourceAsStream("./conf/feeds-ranker-conf.properties");
+    	System.out.println("....1.....");
         if(fileInputStream != null){
         	Properties properties = new Properties();
         	try {
@@ -36,5 +38,6 @@ public class Test {
         		System.out.println(properties.get(key));
         	}
         }
+        System.out.println("...2.....");
     }
 }
