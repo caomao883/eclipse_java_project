@@ -26,12 +26,30 @@
 		<resources>
 			<resource>
 				<directory>src/main/resource</directory>
-				<!-- <excludes>
-					<exclude>feeds-ranker-conf.properties</exclude>
-				</excludes> -->
+				<!-- <excludes> <exclude>feeds-ranker-conf.properties</exclude> </excludes> -->
 
 				<filtering>false</filtering>
 			</resource>
 		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<archive>
+						<manifest>
+							<Main-Class>com.uestc.study_java.SystemProperies</Main-Class>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>libs</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			
+		</plugins>
 	</build>
+
+
 </project>
