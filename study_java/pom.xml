@@ -13,21 +13,44 @@
 	<properties>
 		<maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework>4.1.6.RELEASE</org.springframework>
 	</properties>
 
 	<dependencies>
 		<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-            <!-- <scope>test</scope> -->
-        </dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+			<!-- <scope>test</scope> -->
+		</dependency>
+		
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<resources>
@@ -54,27 +77,27 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<plugin>  
-		            <groupId>org.apache.maven.plugins</groupId>  
-		            <artifactId>maven-assembly-plugin</artifactId>  
-		            <version>2.6</version>
-		            <configuration>
-		            	<appendAssemblyId>false</appendAssemblyId>
-		            	<finalName>study_java-${maven.build.timestamp}</finalName>
-		                <descriptors>  
-		                    <descriptor>src/main/assembly/assembly.xml</descriptor>  
-		                </descriptors>  
-		            </configuration>  
-		            <executions>  
-		                <execution>  
-		                    <id>make-assembly</id> 
-		                    <phase>package</phase>  
-		                    <goals>  
-		                        <goal>single</goal>  
-		                    </goals>  
-		                </execution>  
-		            </executions>  
-		        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>study_java-${maven.build.timestamp}</finalName>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

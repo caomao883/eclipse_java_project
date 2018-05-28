@@ -1,10 +1,12 @@
 package com.uestc.study_java.properies;
 
-import java.util.Map;
-import java.util.Map.Entry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SystemProperies {
+	private static Logger LOG = LoggerFactory.getLogger(SystemProperies.class);
 	public static void main(String[] args){
+		LOG.info(".....ouhuihao dd = {}",1);
 		System.out.println(System.getProperty("key1","value1"));
 		//getEnvProperies();
 	}
